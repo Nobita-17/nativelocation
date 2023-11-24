@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../providers/user_places.dart';
+import 'image_input.dart';
 
 class Addplace extends ConsumerStatefulWidget {
   const Addplace({Key? key}) : super(key: key);
@@ -13,9 +14,9 @@ class Addplace extends ConsumerStatefulWidget {
 class _AddplaceState extends ConsumerState<Addplace> {
   final _titleController = TextEditingController();
 
-  void saveplace(){
+  void saveplace() {
     final enterText = _titleController.text;
-    if(enterText.isEmpty){
+    if (enterText.isEmpty) {
       return;
     }
     ref.read(UserPlaceProvider.notifier).addPlace(enterText);
@@ -41,8 +42,11 @@ class _AddplaceState extends ConsumerState<Addplace> {
             TextField(
               decoration: InputDecoration(labelText: 'Title'),
               controller: _titleController,
-              style: TextStyle(color: Theme.of(context).colorScheme.onBackground),
+              style:
+                  TextStyle(color: Theme.of(context).colorScheme.onBackground),
             ),
+            SizedBox(height: 20),
+            ImageInput(),
             SizedBox(height: 20),
             ElevatedButton.icon(
               onPressed: saveplace,
