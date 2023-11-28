@@ -77,7 +77,7 @@ class _LocationInputState extends State<LocationInput> {
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
+          children: [  //childd
             TextButton.icon(
               onPressed: () {},
               icon: Icon(Icons.location_on_rounded),
