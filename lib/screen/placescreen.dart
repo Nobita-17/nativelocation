@@ -20,7 +20,10 @@ class Placescreen extends ConsumerWidget {
             , icon: Icon(Icons.add))
        ],
       ),
-      body: listscreen(places:myuserpalce,),
+      body: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: listscreen(places:myuserpalce,),
+      ),
     );
   }
 }
